@@ -49,7 +49,7 @@
     width: 5px;
 
     background-color: var(--card-accent-color);
-    transition: background-color 0.2s;
+    transition: ease-in background-color 0.3s;
 }
 
 .book-card::after {
@@ -63,7 +63,7 @@
     width: 5px;
 
     background-color: var(--card-accent-color);
-    transition: background-color 0.2s;
+    transition: ease-in background-color 0.3s;
 }
 
 .book-title {
@@ -90,7 +90,7 @@
     padding: 8px 10px;
 
     cursor: pointer;
-    transition: opacity 0.2s, background-color 0.2s;
+    transition: ease-in opacity 0.3s, ease-in background-color 0.3s;
 }
 
 .book-card button:hover {
