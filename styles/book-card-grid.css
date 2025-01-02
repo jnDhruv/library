@@ -1,11 +1,9 @@
 :root {
     --book-card-bg-color: #FFFFFF;
     --book-card-text-color: #4A4A4A;
-    --button-color: #357ABD;
     --button-text-color: #F7F9FB;
 
     --shadow-color: rgba(0, 0, 0, 0.3);
-    --book-read-color: #16a34a;
 }
 
 #books-grid-area {
@@ -49,16 +47,32 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     width: 5px;
-    background-color: var(--book-read-color);
+
+    background-color: var(--card-accent-color);
+    transition: background-color 0.2s;
 }
 
-.book-card p + p {
-    margin-top: 5px;
+.book-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 5px;
+
+    background-color: var(--card-accent-color);
+    transition: background-color 0.2s;
 }
 
 .book-title {
     font-weight: bolder;
     font-size: 1.2rem;
+}
+
+.author-name {
+    font-weight: bolder;
 }
 
 .book-card button {
@@ -69,14 +83,14 @@
     justify-self: flex-end;
 
     width: 170px;
-    background-color: var(--book-read-color);
+    background-color: var(--card-accent-color);
     color: var(--button-text-color);
     border-radius: 10px;
     border: none;
     padding: 8px 10px;
 
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, background-color 0.2s;
 }
 
 .book-card button:hover {
