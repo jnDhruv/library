@@ -6,6 +6,16 @@ const green = "#16a34a";
 
 const library = [];
 
+// dialog form elements
+const newBookBtn = document.querySelector("#add-book");
+const dialogBox = document.querySelector("dialog");
+const form = document.querySelector("form");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
+const isReadInput = document.querySelector("#isRead");
+const submitBtn = document.querySelector("#submitBtn");
+
 function Book(title, author, pages, haveRead) {
     this.title = title;
     this.author = author;
@@ -21,7 +31,8 @@ function renderBooks() {
     booksGrid.replaceChildren();
     
     for (let i = 0; i < library.length; i++) {
-        booksGrid.appendChild(createCardObject(library[i]));
+        const bookCard = createCardObject(library[i]);
+        booksGrid.appendChild(bookCard);
     }
 }
 
@@ -70,3 +81,14 @@ function createCardObject(BookObj) {
     cardElement.appendChild(toggleReadBtn);
     return cardElement;
 }
+
+newBookBtn.addEventListener("click", () => {
+    dialogBox.showModal();
+});
+
+submitBtn.addEventListener("click", () => {
+    addToLibrary(titleInput.value, authorInput.value, pagesInput.value, isReadInput.checked);
+    renderBooks();
+    dialogBox.close();
+    form.reset();
+});

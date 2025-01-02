@@ -14,6 +14,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/book-card-grid.css">
+    <link rel="stylesheet" href="styles/dialog.css">
 </head>
 
 <body>
@@ -22,7 +23,27 @@
     <main id="books-grid-area">
     </main>
     <button id="add-book">+</button>
-    <dialog id="create-book-card">asd</dialog>
+    <dialog id="create-book-card">
+        <h3>Add a Book</h3>
+        <form action="#" method="dialog">
+            <div>
+                <input type="text" id="title" placeholder="Title" required>
+            </div>
+            <div>
+                <input type="text" id="author" placeholder="Author" required>
+            </div>
+            <div>
+                <input type="number" id="pages" placeholder="Pages" required>
+            </div>
+            <div>
+                <input type="checkbox" id="isRead">
+                <label for="isRead">Read</label>
+            </div>
+            <div>
+                <input type="submit" value="Add" id="submitBtn">
+            </div>
+        </form>
+    </dialog>
     <script src="script.js"></script>
 </body>
 
