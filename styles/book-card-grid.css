@@ -19,7 +19,7 @@
     
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 1px 1px 3px var(--shadow-color);
+    box-shadow: 0 0 4px var(--shadow-color);
 
     & .empty-grid-placeholder {
         opacity: 0.5;

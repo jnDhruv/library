@@ -117,6 +117,6 @@ closeDiagBtn.addEventListener("click", () => {
 
 dialogBox.addEventListener("close", () => {
     form.reset();
-})
+});
 
 renderBooks();

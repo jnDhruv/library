@@ -5,7 +5,7 @@ dialog {
 
     border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 
     position: relative;
 }
@@ -32,11 +32,12 @@ input[type="number"] {
     border: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, border-width 0.2s;
 
     &:focus {
         outline: 0;
         border-color: var(--accent-color-blue);
+        border-width: 3px;
     }
 }
 
