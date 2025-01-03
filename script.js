@@ -28,6 +28,16 @@ function addToLibrary(title, author, pages, haveRead) {
 }
 
 function renderBooks() {
+    if (library.length === 0) {
+        booksGrid.replaceChildren();
+
+        const emptyLibText = document.createElement("h3")
+        emptyLibText.textContent = "Click on '+' to add a book";
+        emptyLibText.classList.add("empty-grid-placeholder");
+        booksGrid.appendChild(emptyLibText);
+        return;
+    }
+
     booksGrid.replaceChildren();
     
     for (let i = 0; i < library.length; i++) {
@@ -35,10 +45,6 @@ function renderBooks() {
         booksGrid.appendChild(bookCard);
     }
 }
-
-// addToLibrary("ah", "ahh", 12, true);
-// renderBooks();
-
 
 function createCardObject(BookObj, index) {
     
@@ -103,3 +109,5 @@ form.addEventListener("submit", () => {
     dialogBox.close();
     form.reset();
 });
+
+renderBooks();
