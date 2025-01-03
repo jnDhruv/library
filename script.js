@@ -110,4 +110,13 @@ form.addEventListener("submit", () => {
     form.reset();
 });
 
+const closeDiagBtn = document.querySelector(".close-btn");
+closeDiagBtn.addEventListener("click", () => {
+    dialogBox.close();
+});
+
+dialogBox.addEventListener("close", () => {
+    form.reset();
+})
+
 renderBooks();
