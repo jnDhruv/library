@@ -1,6 +1,6 @@
 # Library Project
 ---
-A simple site where you can track your book reading.
+A simple site where you can track your book reading. [Open Live Preview](https://jndhruv.github.io/library/)
 - Add your book's title along with it's author name and number of pages.
 - Mark them as unread/read to maintain a record.
 
