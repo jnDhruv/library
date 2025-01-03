@@ -31,19 +31,20 @@ function renderBooks() {
     booksGrid.replaceChildren();
     
     for (let i = 0; i < library.length; i++) {
-        const bookCard = createCardObject(library[i]);
+        const bookCard = createCardObject(library[i], i);
         booksGrid.appendChild(bookCard);
     }
 }
 
-addToLibrary("ah", "ahh", 12, true);
-renderBooks();
+// addToLibrary("ah", "ahh", 12, true);
+// renderBooks();
 
 
-function createCardObject(BookObj) {
+function createCardObject(BookObj, index) {
     
     const cardElement = document.createElement("div");
     cardElement.classList.add("book-card");
+    cardElement.dataset.index = index;
 
     let haveReadStr = BookObj.haveRead? "Yes":"No";
     cardElement.style.setProperty("--card-accent-color", BookObj.haveRead? green:red);
@@ -79,6 +80,16 @@ function createCardObject(BookObj) {
         }
     });
     cardElement.appendChild(toggleReadBtn);
+
+    const removeBtn = document.createElement("button");
+    removeBtn.innerHTML = `<img src="icons/close.svg" alt="remove">`;
+    removeBtn.classList.add("remove-btn");
+    removeBtn.addEventListener("click", () => {
+        library.splice(cardElement.dataset.index,1);
+        renderBooks();
+    });
+    cardElement.appendChild(removeBtn);
+
     return cardElement;
 }
 
@@ -86,7 +97,7 @@ newBookBtn.addEventListener("click", () => {
     dialogBox.showModal();
 });
 
-submitBtn.addEventListener("click", () => {
+form.addEventListener("submit", () => {
     addToLibrary(titleInput.value, authorInput.value, pagesInput.value, isReadInput.checked);
     renderBooks();
     dialogBox.close();
