@@ -1,20 +1,4 @@
-const root = document.querySelector(":root");
-const booksGrid = document.getElementById("books-grid-area");
-
-const red = "#dc2626";
-const green = "#16a34a";
-
 const library = [];
-
-// dialog form elements
-const newBookBtn = document.querySelector("#add-book");
-const dialogBox = document.querySelector("dialog");
-const form = document.querySelector("form");
-const titleInput = document.querySelector("#title");
-const authorInput = document.querySelector("#author");
-const pagesInput = document.querySelector("#pages");
-const isReadInput = document.querySelector("#isRead");
-const submitBtn = document.querySelector("#submitBtn");
 
 function Book(title, author, pages, haveRead) {
     this.title = title;
@@ -26,6 +10,22 @@ function Book(title, author, pages, haveRead) {
 function addToLibrary(title, author, pages, haveRead) {
     library.push(new Book(title, author, pages, haveRead));
 }
+
+// DOM
+const booksGrid = document.getElementById("books-grid-area");
+
+const red = "#dc2626";
+const green = "#16a34a";
+
+// dialog form elements
+const newBookBtn = document.querySelector("#add-book");
+const dialogBox = document.querySelector("dialog");
+const form = document.querySelector("form");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
+const isReadInput = document.querySelector("#isRead");
+const submitBtn = document.querySelector("#submitBtn");
 
 function renderBooks() {
     if (library.length === 0) {
