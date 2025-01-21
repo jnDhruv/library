@@ -55,20 +55,6 @@
     transition: ease-in background-color 0.3s;
 }
 
-.book-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 5px;
-
-    background-color: var(--card-accent-color);
-    transition: ease-in background-color 0.3s;
-}
-
 .book-title {
     font-weight: bolder;
     font-size: 1.2rem;
